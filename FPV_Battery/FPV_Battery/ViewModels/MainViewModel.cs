@@ -29,13 +29,13 @@ namespace FPV_Battery.ViewModels
                     SerialNumber = "K02007692",
                     BoughtDate = DateTime.Now,
                     Cycles = 0,
-                    Id = 0
                 }
             };
         }
         #endregion
 
         #region Properties
+
         public ObservableCollection<Battery> Batteries
         {
             get
@@ -55,8 +55,17 @@ namespace FPV_Battery.ViewModels
         #region Methods
         private async void AddClicked(object obj)
         {
-            await Navigation.PushAsync(new AddView());
+            var page = new AddView();
+            page.viewModel.BatteryAdd += ViewModel_BatteryAdd;
+            await Navigation.PushAsync(page);
         }
+
+        private void ViewModel_BatteryAdd(object sender, EventArgs e)
+        {
+            Batteries.Add((e as BatteryCreatedEventArgs).Bat);
+        }
+
+
         #endregion
     }
 }

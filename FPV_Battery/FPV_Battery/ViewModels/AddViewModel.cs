@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace FPV_Battery.ViewModels
@@ -85,14 +86,20 @@ namespace FPV_Battery.ViewModels
             SaveCommand = new Command(SaveClicked);
         }
 
+        #region Properties
+        public event EventHandler BatteryAdd;
+        #endregion
+
         #region Methods
         private async void ScanModelClicked(object obj)
         {
-            //TODO
+            ZXing.Result result = await ScanCode(true);
+            Model = result.Text;
         }
         private async void ScanSerialClicked(object obj)
         {
-            //TODO
+            ZXing.Result result = await ScanCode(false);
+            SerialNumber = result.Text;
         }
         private async void CancelClicked(object obj)
         {
@@ -101,10 +108,62 @@ namespace FPV_Battery.ViewModels
 
         private async void SaveClicked(object obj)
         {
-            //TODO need to save
+            BatteryCreatedEventArgs e = new BatteryCreatedEventArgs()
+            {
+                Bat = new Battery()
+                {
+                    BoughtDate = Bought,
+                    Cycles = Cycle,
+                    Model = Model,
+                    SerialNumber = SerialNumber
+                }
+            };
+            OnBatteryAdd(e);
             await Navigation.PopAsync();
         }
 
+        private async Task<ZXing.Result> ScanCode(bool linear)
+        {
+
+#if __ANDROID__
+	            // Initialize the scanner first so it can track the current context
+	            MobileBarcodeScanner.Initialize (Application);
+#endif
+            var scanner = new ZXing.Mobile.MobileBarcodeScanner();
+
+            if (linear == true)
+            {
+                var options = new ZXing.Mobile.MobileBarcodeScanningOptions();
+                    options.PossibleFormats = new List<ZXing.BarcodeFormat>() {
+                        ZXing.BarcodeFormat.All_1D
+                };
+
+                var result = await scanner.Scan(options);
+
+                return result;
+            }
+            else
+            {
+                var options = new ZXing.Mobile.MobileBarcodeScanningOptions();
+                options.PossibleFormats = new List<ZXing.BarcodeFormat>() {
+                        ZXing.BarcodeFormat.QR_CODE, ZXing.BarcodeFormat.AZTEC
+                };
+
+                var result = await scanner.Scan(options);
+
+                return result;
+            }
+        }
+
+        private void OnBatteryAdd(BatteryCreatedEventArgs e)
+        {
+            BatteryAdd?.Invoke(this, e);
+        }
         #endregion
+    }
+
+    public class BatteryCreatedEventArgs : EventArgs
+    {
+        public Battery Bat { get; set; }
     }
 }

@@ -72,6 +72,7 @@
 <PackageReference Include="Syncfusion.Xamarin.SfAutoComplete" Version="18.2.0.57" />
 <PackageReference Include="Syncfusion.Xamarin.Expander " Version="18.2.0.44" />
 <PackageReference Include="Xamarin.Forms.PancakeView" Version="2.2.0.740" />
+<PackageReference Include="ZXing.Net.Mobile.Forms" Version="3.0.0-beta5" />
 
 
 
