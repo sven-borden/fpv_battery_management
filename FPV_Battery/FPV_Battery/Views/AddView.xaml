@@ -136,10 +136,9 @@
                                 Text="&#x1F5D3;"/>
                         </inputLayout:SfTextInputLayout.LeadingView>
 
-                        <maskededit:SfMaskedEdit
+                        <Entry
                             Keyboard="Default"
-                            Mask="0 000000 000000"
-                            Value="{Binding Model, Mode=TwoWay}"
+                            Text="{Binding SerialNumber, Mode=TwoWay}"
                         />
                     </inputLayout:SfTextInputLayout>
 
