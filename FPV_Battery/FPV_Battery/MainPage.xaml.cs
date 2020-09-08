@@ -1,3 +1,4 @@
+using FPV_Battery.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -5,13 +6,16 @@ using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 
-namespace fpv_batteries
+namespace FPV_Battery
 {
     public partial class MainPage : ContentPage
     {
+        public MainViewModel viewModel;
         public MainPage()
         {
             InitializeComponent();
+            BindingContext = viewModel = new MainViewModel();
+            viewModel.Navigation = Navigation;
         }
     }
 }

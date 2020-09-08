@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace fpv_batteries.iOS
+namespace FPV_Battery.iOS
 {
     public class Application
     {

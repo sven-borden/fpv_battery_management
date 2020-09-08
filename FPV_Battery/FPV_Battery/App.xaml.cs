@@ -5,15 +5,16 @@ using System.Text;
 
 using Xamarin.Forms;
 
-namespace fpv_batteries
+namespace FPV_Battery
 {
     public partial class App : Application
     {
         public App()
         {
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjkxMTE5QDMxMzgyZTMyMmUzMGhZSkwvVDJBM1Fzbk5UeUU2OCtTL2hIRWJIV0I0TSt4MkdGSjYzcW8wQlU9");
             InitializeComponent();
 
-            MainPage = new fpv_batteries.MainPage();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
