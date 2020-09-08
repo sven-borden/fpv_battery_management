@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace FPV_Battery.ViewModels
@@ -103,6 +104,21 @@ namespace FPV_Battery.ViewModels
         {
             //TODO need to save
             await Navigation.PopAsync();
+        }
+
+        private async Task<ZXing.Result> ScanCode()
+        {
+            string code = string.Empty;
+
+            #if __ANDROID__
+	            // Initialize the scanner first so it can track the current context
+	            MobileBarcodeScanner.Initialize (Application);
+            #endif
+            var scanner = new ZXing.Mobile.MobileBarcodeScanner();
+
+            var result = await scanner.Scan();
+
+            return result;
         }
 
         #endregion
