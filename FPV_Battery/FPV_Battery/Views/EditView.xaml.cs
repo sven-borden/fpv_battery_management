@@ -1,4 +1,5 @@
-﻿using FPV_Battery.ViewModels;
+﻿using FPV_Battery.Model;
+using FPV_Battery.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,16 +11,15 @@ using Xamarin.Forms.Xaml;
 
 namespace FPV_Battery.Views
 {
-    public partial class AddView : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class EditView : ContentPage
     {
-        public AddViewModel viewModel;
-        public AddView()
+        public EditViewModel viewModel;
+        public EditView(Battery preBat)
         {
             InitializeComponent();
-            BindingContext = viewModel = new AddViewModel();
+            BindingContext = viewModel = new EditViewModel(preBat);
             viewModel.Navigation = Navigation;
-
-
         }
     }
 }

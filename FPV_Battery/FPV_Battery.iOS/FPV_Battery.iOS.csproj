@@ -195,6 +195,18 @@
       <Name>FPV_Battery</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\barcode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\qrcode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cycle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\date.png" />
+  </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
       <UserProperties XamarinHotReloadWrongLinkerErrorInfoBarFPV_BatteryiOSHideInfoBar="True" />
