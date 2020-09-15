@@ -9,6 +9,7 @@ namespace FPV_Battery.ViewModels
 {
     public class EditViewModel : BaseViewModel
     {
+        #region properties
         private string model;
         public string Model
         {
@@ -69,6 +70,8 @@ namespace FPV_Battery.ViewModels
 
         public INavigation Navigation;
 
+        #endregion
+
         #region Command
         public Command ScanModelCommand { get; set; }
         public Command ScanSerialCommand { get; set; }
@@ -77,9 +80,9 @@ namespace FPV_Battery.ViewModels
         #endregion
 
         #region Constructor
-        public EditViewModel(Battery preBat)
+
+        public EditViewModel()
         {
-            this.preBat = preBat;
             Bought = DateTime.Now;
             Cycle = 0;
             Model = string.Empty;
@@ -88,6 +91,14 @@ namespace FPV_Battery.ViewModels
             ScanSerialCommand = new Command(ScanSerialClicked);
             CancelCommand = new Command(CancelClicked);
             SaveCommand = new Command(SaveClicked);
+        }
+        public EditViewModel(Battery preBat) : this()
+        {
+            this.preBat = preBat;
+            Bought = preBat.BoughtDate;
+            Cycle = preBat.Cycles;
+            Model = preBat.Model;
+            serialNumber = preBat.SerialNumber;
         }
         #endregion
         #region Properties
@@ -107,7 +118,7 @@ namespace FPV_Battery.ViewModels
         }
         private async void CancelClicked(object obj)
         {
-            await Navigation.PopAsync();
+            await Navigation.PopModalAsync();
         }
 
         private async void SaveClicked(object obj)
@@ -124,7 +135,7 @@ namespace FPV_Battery.ViewModels
                 }
             };
             OnBatteryEdited(e);
-            await Navigation.PopAsync();
+            await Navigation.PopModalAsync();
         }
 
         private async Task<ZXing.Result> ScanCode(bool linear)

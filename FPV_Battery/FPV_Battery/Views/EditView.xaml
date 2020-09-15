@@ -222,7 +222,7 @@
                         Command="{Binding CancelCommand}"/>
 
                     <button:SfButton
-                       Text="Add"
+                       Text="Save"
                         Margin="10"
                         CornerRadius="10"
                         WidthRequest="100"

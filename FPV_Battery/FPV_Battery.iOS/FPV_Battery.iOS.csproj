@@ -207,9 +207,14 @@
   <ItemGroup>
     <BundleResource Include="Resources\date.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Media.xcassets\AppIcons.appiconset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadWrongLinkerErrorInfoBarFPV_BatteryiOSHideInfoBar="True" />
+      <UserProperties XamarinHotReloadMonoInterpreterErrorInfoBarFPV_BatteryiOSHideInfoBar="True" XamarinHotReloadWrongLinkerErrorInfoBarFPV_BatteryiOSHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

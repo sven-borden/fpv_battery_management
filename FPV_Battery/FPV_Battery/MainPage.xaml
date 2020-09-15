@@ -166,9 +166,6 @@
                             CornerRadius="10"
                             Padding="10"
                             Margin="0,10">
-                            <yummy:PancakeView.Shadow>
-                                <yummy:DropShadow Color="#000000" Offset="10,10" />
-                            </yummy:PancakeView.Shadow>
                             <Grid>
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="3*"/>
