@@ -149,7 +149,7 @@
                                 VerticalOptions="Center"                                FontAttributes="Bold" 
                                 FontSize="18" 
                                 TextColor="Black" 
-                                Grid.Column="1"/>
+                                />
                             <button:SfButton
                                 Grid.Column="2"
                                 ShowIcon="True"

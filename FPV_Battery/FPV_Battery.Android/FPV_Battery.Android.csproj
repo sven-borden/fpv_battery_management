@@ -148,10 +148,13 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\barcode.png" />
+    <AndroidResource Include="Resources\drawable\addbattery.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\qrcode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\barcode.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\cycle.png" />
@@ -162,7 +165,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadDebuggerTimeoutExceptionFPV_BatteryAndroidHideInfoBar="True" XamarinHotReloadXFormsNugetUpgradeInfoBarFPV_BatteryAndroidHideInfoBar="True" />
+      <UserProperties XamarinHotReloadXFormsNugetUpgradeInfoBarFPV_BatteryAndroidHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

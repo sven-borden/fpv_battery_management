@@ -196,10 +196,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\barcode.png" />
+    <BundleResource Include="Resources\addbattery.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\qrcode.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\barcode.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\cycle.png" />
@@ -208,13 +211,11 @@
     <BundleResource Include="Resources\date.png" />
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Media.xcassets\AppIcons.appiconset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
+    <BundleResource Include="Resources\icon.png" />
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadMonoInterpreterErrorInfoBarFPV_BatteryiOSHideInfoBar="True" XamarinHotReloadWrongLinkerErrorInfoBarFPV_BatteryiOSHideInfoBar="True" />
+      <UserProperties XamarinHotReloadWrongLinkerErrorInfoBarFPV_BatteryiOSHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>
