@@ -97,22 +97,42 @@
                 <listview:SfListView.HeaderTemplate>
                     <DataTemplate>
                         <Grid 
-                            HorizontalOptions="Center"
-                            HeightRequest="45">
-                            <Label 
-                                Text="My batteries" 
-                                FontAttributes="Bold" 
-                                FontSize="18" 
-                                TextColor="Black" />
+                            HorizontalOptions="CenterAndExpand"
+                            HeightRequest="45" BackgroundColor="Yellow">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            
+                            
                             <button:SfButton
-                                Grid.Column="2"
-                                Text="+"
+                                Grid.Column="0"
+                                ShowIcon="True"
+                                ImageSource="addbattery.png"
                                 BackgroundColor="Transparent"
                                 TextColor="SteelBlue"
                                 FontSize="Large"
                                 VerticalOptions="Center"
-                                VerticalTextAlignment="Start"
+                                HorizontalOptions="Start"
+                                Command="{Binding AddCommand}"/>
+                            <Label 
+                                Text="My batteries" 
+                                HorizontalTextAlignment="Center"
+                                VerticalOptions="Center"                                FontAttributes="Bold" 
+                                FontSize="18" 
+                                TextColor="Black" 
+                                Grid.Column="1"/>
+                            <button:SfButton
+                                Grid.Column="2"
+                                ShowIcon="True"
                                 HorizontalTextAlignment="End"
+                                ImageSource="addbattery.png"
+                                BackgroundColor="Transparent"
+                                TextColor="SteelBlue"
+                                FontSize="Large"
+                                VerticalOptions="Center"
+                                HorizontalOptions="End"
                                 Command="{Binding AddCommand}"/>
                         </Grid>
                     </DataTemplate>
