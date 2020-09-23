@@ -6,6 +6,7 @@ using Syncfusion.XForms.RichTextEditor;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Windows.Input;
 using Xamarin.Forms;
 namespace FPV_Battery.ViewModels
@@ -19,12 +20,16 @@ namespace FPV_Battery.ViewModels
 
         #region Command
         public Command AddCommand { get; set; }
+
+        public Command ScanCycle { get; set; }
+
         #endregion
 
         #region Constructor
         public MainViewModel()
         {
             AddCommand = new Command(AddClicked);
+            ScanCycle = new Command(ScanAddCycle);
             Batteries = StorageHelper.GetBatteries();
         }
         #endregion
@@ -49,11 +54,44 @@ namespace FPV_Battery.ViewModels
 
         #region Methods
 
+        public void AddCycleFromSwipe(string serial)
+        {
+            Battery o = Batteries.Where(b => b.SerialNumber == serial).FirstOrDefault();
+            Batteries.Remove(o);
+            o.Cycles += 1;
+            Batteries.Add(o);
+            StorageHelper.SaveBatteries(Batteries);
+        }
         private async void AddClicked(object obj)
         {
             var page = new AddView();
             page.viewModel.BatteryAdd += ViewModel_BatteryAdd;
             await Navigation.PushAsync(page);
+        }
+
+        private async void ScanAddCycle(object obj)
+        {
+            ZXing.Result result = await ScanHelper.ScanCode(false);
+            try
+            {
+                var SerialNumber = result.Text;
+
+                Battery p = Batteries.Where(b => b.SerialNumber == SerialNumber).FirstOrDefault();
+
+                //Display confirmation
+                bool confirm = await Application.Current.MainPage.DisplayAlert("Add a cycle?", "Would you like to add a cycle to battery?", "Yes", "No");
+                if (confirm)
+                {
+                    Batteries.Remove(p);
+                    p.Cycles += 1;
+                    Batteries.Add(p);
+                    StorageHelper.SaveBatteries(Batteries);
+                }
+            }
+            catch(Exception e)
+            {
+                
+            }
         }
 
         private void ViewModel_BatteryAdd(object sender, EventArgs e)

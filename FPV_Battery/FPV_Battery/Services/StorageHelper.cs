@@ -32,9 +32,10 @@ namespace FPV_Battery.Services
             else
             {
 
-                var s = File.ReadAllText(filename);
                 try
                 {
+                    var s = File.ReadAllText(filename);
+
                     var batteries = new ObservableCollection<Battery>(JsonConvert.DeserializeObject<ObservableCollection<Battery>>(s));
                     if (batteries == null)
                         batteries = new ObservableCollection<Battery>();

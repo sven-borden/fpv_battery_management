@@ -117,7 +117,37 @@
                 AutoFitMode="DynamicHeight"
                 SelectionBackgroundColor="Transparent"
                 ItemTapped="BatteryListView_ItemTapped"
+                AllowSwiping="True"
+                SwipeStarted="BatteryListView_SwipeStarted" 
                 >
+                <listview:SfListView.RightSwipeTemplate>
+                    <DataTemplate x:Name="RightSwipeTemplate">
+                        <Grid>
+                            <Grid 
+                                BackgroundColor="#009EDA" 
+                                HorizontalOptions="Fill" 
+                                VerticalOptions="Fill"
+                                Grid.Column="0" 
+                                Margin="0,10,0,10">
+                                <Label 
+                                    Grid.Column="0"                                          
+                                    Grid.Row="0"
+                                    BackgroundColor="Transparent"
+                                    HeightRequest="35"
+                                    HorizontalOptions="Center"
+                                    VerticalOptions="Center"
+                                    WidthRequest="35"
+                                    TextColor="White"
+                                    Text="Add Cycle"
+                                    >
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                                    </Grid.GestureRecognizers>
+                                </Label>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </listview:SfListView.RightSwipeTemplate>
                 <!--header-->
                 <listview:SfListView.HeaderTemplate>
                     <DataTemplate>
@@ -154,13 +184,13 @@
                                 Grid.Column="2"
                                 ShowIcon="True"
                                 HorizontalTextAlignment="End"
-                                ImageSource="addbattery.png"
+                                ImageSource="qrcode.png"
                                 BackgroundColor="Transparent"
                                 TextColor="SteelBlue"
                                 FontSize="Large"
                                 VerticalOptions="Center"
                                 HorizontalOptions="End"
-                                Command="{Binding AddCommand}"/>
+                                Command="{Binding ScanCycle}"/>
                         </Grid>
                     </DataTemplate>
                 </listview:SfListView.HeaderTemplate>

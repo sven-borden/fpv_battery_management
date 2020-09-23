@@ -1,4 +1,5 @@
 ﻿using FPV_Battery.Model;
+using FPV_Battery.Services;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -108,12 +109,12 @@ namespace FPV_Battery.ViewModels
         #region Methods
         private async void ScanModelClicked(object obj)
         {
-            ZXing.Result result = await ScanCode(true);
+            ZXing.Result result = await ScanHelper.ScanCode(true);
             Model = result.Text;
         }
         private async void ScanSerialClicked(object obj)
         {
-            ZXing.Result result = await ScanCode(false);
+            ZXing.Result result = await ScanHelper.ScanCode(false);
             SerialNumber = result.Text;
         }
         private async void CancelClicked(object obj)
@@ -136,39 +137,6 @@ namespace FPV_Battery.ViewModels
             };
             OnBatteryEdited(e);
             await Navigation.PopModalAsync();
-        }
-
-        private async Task<ZXing.Result> ScanCode(bool linear)
-        {
-
-#if __ANDROID__
-	            // Initialize the scanner first so it can track the current context
-	            MobileBarcodeScanner.Initialize (Application);
-#endif
-            var scanner = new ZXing.Mobile.MobileBarcodeScanner();
-
-            if (linear == true)
-            {
-                var options = new ZXing.Mobile.MobileBarcodeScanningOptions();
-                options.PossibleFormats = new List<ZXing.BarcodeFormat>() {
-                        ZXing.BarcodeFormat.All_1D
-                };
-
-                var result = await scanner.Scan(options);
-
-                return result;
-            }
-            else
-            {
-                var options = new ZXing.Mobile.MobileBarcodeScanningOptions();
-                options.PossibleFormats = new List<ZXing.BarcodeFormat>() {
-                        ZXing.BarcodeFormat.QR_CODE, ZXing.BarcodeFormat.AZTEC
-                };
-
-                var result = await scanner.Scan(options);
-
-                return result;
-            }
         }
 
         private void OnBatteryEdited(BatteryEditedEventArgs e)

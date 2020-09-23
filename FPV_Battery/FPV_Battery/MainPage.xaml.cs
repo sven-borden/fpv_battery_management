@@ -12,6 +12,7 @@ namespace FPV_Battery
     public partial class MainPage : ContentPage
     {
         public MainViewModel viewModel;
+        private Battery last_battery_swiped;
         public MainPage()
         {
 
@@ -25,6 +26,16 @@ namespace FPV_Battery
         private void BatteryListView_ItemTapped(object sender, Syncfusion.ListView.XForms.ItemTappedEventArgs e)
         {
             viewModel.OpenItem((e.ItemData as Battery).SerialNumber);
+        }
+
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            viewModel.AddCycleFromSwipe(last_battery_swiped.SerialNumber);
+        }
+
+        private void BatteryListView_SwipeStarted(object sender, Syncfusion.ListView.XForms.SwipeStartedEventArgs e)
+        {
+            last_battery_swiped = (e.ItemData as Battery);
         }
     }
 }
