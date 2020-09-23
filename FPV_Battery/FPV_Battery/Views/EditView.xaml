@@ -1,9 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage 
-    xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="FPV_Battery.Views.AddView"
-    xmlns:signaturepad="clr-namespace:Syncfusion.XForms.SignaturePad;assembly=Syncfusion.SfSignaturePad.XForms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FPV_Battery.Views.EditView"
+             xmlns:signaturepad="clr-namespace:Syncfusion.XForms.SignaturePad;assembly=Syncfusion.SfSignaturePad.XForms"
     xmlns:chart="clr-namespace:Syncfusion.SfChart.XForms;assembly=Syncfusion.SfChart.XForms"
     xmlns:sunburstchart="clr-namespace:Syncfusion.SfSunburstChart.XForms;assembly=Syncfusion.SfSunburstChart.XForms"
     xmlns:imageeditor="clr-namespace:Syncfusion.SfImageEditor.XForms;assembly=Syncfusion.SfImageEditor.XForms"
@@ -67,20 +66,18 @@
     xmlns:yummy="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     xmlns:vm="clr-namespace:FPV_Battery.ViewModels"
     xmlns:converter="clr-namespace:FPV_Battery.Converters"
-    Title="Add New Battery"
-    NavigationPage.HasNavigationBar="True"
     BackgroundColor="WhiteSmoke">
 
+
     <ContentPage.BindingContext>
-        <vm:AddViewModel />
+        <vm:EditViewModel />
     </ContentPage.BindingContext>
-    
+
     <ContentPage.Resources>
         <ResourceDictionary>
             <converter:Model2NameConverter x:Key="Model2NameConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
-    
     
     <ContentPage.Content>
         <ScrollView>
@@ -126,7 +123,7 @@
                         </inputLayout:SfTextInputLayout.TrailingView>
                     </inputLayout:SfTextInputLayout>
 
-                    
+
                 </StackLayout>
 
                 <!--Serial Part-->
@@ -225,7 +222,7 @@
                         Command="{Binding CancelCommand}"/>
 
                     <button:SfButton
-                       Text="Add"
+                       Text="Save"
                         Margin="10"
                         CornerRadius="10"
                         WidthRequest="100"

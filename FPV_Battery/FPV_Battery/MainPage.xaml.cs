@@ -1,3 +1,4 @@
+using FPV_Battery.Model;
 using FPV_Battery.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -13,9 +14,17 @@ namespace FPV_Battery
         public MainViewModel viewModel;
         public MainPage()
         {
+
             InitializeComponent();
             BindingContext = viewModel = new MainViewModel();
+
             viewModel.Navigation = Navigation;
+        }
+
+
+        private void BatteryListView_ItemTapped(object sender, Syncfusion.ListView.XForms.ItemTappedEventArgs e)
+        {
+            viewModel.OpenItem((e.ItemData as Battery).SerialNumber);
         }
     }
 }

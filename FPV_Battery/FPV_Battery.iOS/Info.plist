@@ -50,5 +50,11 @@
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
 	<string>FPV_Battery</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1</string>
+	<key>XSAppIconAssets</key>
+	<string>Media.xcassets/AppIcons.appiconset</string>
+  <key>NSCameraUsageDescription</key>
+  <string>Require access to camera to scan barcodes and QR codes</string>
 </dict>
 </plist>
