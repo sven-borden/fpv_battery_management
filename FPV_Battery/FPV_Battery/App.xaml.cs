@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FPV_Battery.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,7 +15,7 @@ namespace FPV_Battery
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjkxMTE5QDMxMzgyZTMyMmUzMGhZSkwvVDJBM1Fzbk5UeUU2OCtTL2hIRWJIV0I0TSt4MkdGSjYzcW8wQlU9");
             InitializeComponent();
 
-            MainPage = new NavigationPage(new MainPage());
+            MainPage = new NavigationPage(new MainContainPage());
         }
 
         protected override void OnStart()
