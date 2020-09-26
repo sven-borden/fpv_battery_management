@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:FPV_Battery" xmlns:local2="clr-namespace:FPV_Battery.Views"
+            x:Class="FPV_Battery.Views.MainContainPage">
+  <!--Pages can be added as references or inline-->
+    <local:MainPage Title="Batteries" IconImageSource="battery.png"/>
+    <local2:SettingsView Title="Settings" IconImageSource="settings.png"/>
+</TabbedPage>

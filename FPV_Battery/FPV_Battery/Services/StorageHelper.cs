@@ -50,5 +50,17 @@ namespace FPV_Battery.Services
             }
 
         }
+
+        public async static void Share()
+        {
+            if (File.Exists(filename))
+            {
+                await Xamarin.Essentials.Share.RequestAsync(new Xamarin.Essentials.ShareFileRequest
+                {
+                    Title = "batteries.json",
+                    File = new Xamarin.Essentials.ShareFile(filename)
+                });
+            }
+        }
     }
 }
