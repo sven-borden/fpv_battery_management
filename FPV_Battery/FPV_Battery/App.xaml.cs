@@ -12,7 +12,7 @@ namespace FPV_Battery
     {
         public App()
         {
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjkxMTE5QDMxMzgyZTMyMmUzMGhZSkwvVDJBM1Fzbk5UeUU2OCtTL2hIRWJIV0I0TSt4MkdGSjYzcW8wQlU9");
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzI1MTc2QDMxMzgyZTMzMmUzMFEvand1SHd0cjhxYmlEbFYxSjdJdS9xNmtYRmdUQUJFVnU1djJESEduNUE9");
             InitializeComponent();
 
             MainPage = new NavigationPage(new MainContainPage());

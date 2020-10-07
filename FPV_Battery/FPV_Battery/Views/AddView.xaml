@@ -69,7 +69,7 @@
     xmlns:converter="clr-namespace:FPV_Battery.Converters"
     Title="Add New Battery"
     NavigationPage.HasNavigationBar="True"
-    BackgroundColor="WhiteSmoke">
+    BackgroundColor="Transparent">
 
     <ContentPage.BindingContext>
         <vm:AddViewModel />
