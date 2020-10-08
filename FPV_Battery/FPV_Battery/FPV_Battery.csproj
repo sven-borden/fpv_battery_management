@@ -4,6 +4,16 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Styles\LightTheme.xaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Styles\LightTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
 <ItemGroup>
 <PackageReference Include="Syncfusion.Xamarin.DataSource" Version="18.3.0.38" />
 <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />

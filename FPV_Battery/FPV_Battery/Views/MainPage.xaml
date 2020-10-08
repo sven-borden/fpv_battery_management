@@ -70,7 +70,7 @@
     xmlns:converter="clr-namespace:FPV_Battery.Converters"
     Title="Batteries"
     NavigationPage.HasNavigationBar="False"
-    BackgroundColor="Transparent">
+    BackgroundColor="{DynamicResource PageBackgroundColor}">
     
     <ContentPage.BindingContext>
         <vm:MainViewModel />
