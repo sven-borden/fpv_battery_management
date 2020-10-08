@@ -97,6 +97,7 @@
                 Text="Welcome, please start by adding a battery with the button below. You then will be able to manage your batteries."
                 FontSize="Medium"
                 Margin="20"
+                TextColor="{DynamicResource PrimaryTextColor}"
                 HorizontalTextAlignment="Start"
                 />
             <button:SfButton
@@ -137,7 +138,7 @@
                                     HorizontalOptions="Center"
                                     VerticalOptions="Center"
                                     WidthRequest="35"
-                                    TextColor="White"
+                                    TTextColor="{DynamicResource PrimaryTextColor}"
                                     Text="Add Cycle"
                                     >
                                     <Grid.GestureRecognizers>
@@ -178,7 +179,7 @@
                                 HorizontalTextAlignment="Center"
                                 VerticalOptions="Center"                                FontAttributes="Bold" 
                                 FontSize="18" 
-                                TextColor="Black" 
+                                TextColor="{DynamicResource PrimaryTextColor}"
                                 />
                             <button:SfButton
                                 Grid.Column="2"
@@ -213,7 +214,7 @@
                                         <Label
                                             Text="{Binding Model, Converter={StaticResource Model2NameConverter}}"
                                             FontSize="Medium"
-                                            TextColor="Black"/>
+                                            TextColor="{DynamicResource PrimaryTextColor}"/>
 
                                         <StackLayout
                                             Orientation="Horizontal">
@@ -224,6 +225,7 @@
                                             <Label
                                                 Text="{Binding Model}"
                                                 FontSize="Micro"
+                                                TextColor="{DynamicResource PrimaryTextColor}"
                                                 VerticalOptions="Center"/>
                                         </StackLayout>
 
@@ -237,6 +239,7 @@
                                             <Label
                                                 FontSize="Micro"
                                                 VerticalOptions="Center"
+                                                TextColor="{DynamicResource PrimaryTextColor}"
                                                 Text="{Binding SerialNumber}" />
                                         </StackLayout>
                                         
@@ -255,12 +258,14 @@
                                             <Label
                                                 Text="{Binding Cycles}"
                                                 HorizontalOptions="Center"
+                                                TextColor="{DynamicResource PrimaryTextColor}"
                                                 FontSize="Title"
                                                 />
                                             
                                             <Label
                                                 Text="Cycles"
                                                 HorizontalOptions="Center"
+                                                TextColor="{DynamicResource PrimaryTextColor}"
                                                 />
                                         </StackLayout>
 

@@ -87,7 +87,7 @@
                     VerticalOptions="Start" 
                     HorizontalOptions="Start"
                     FontSize="25"
-                    TextColor="Black"/>
+                    TextColor="{DynamicResource PrimaryTextColor}"/>
 
                 <!--Model part-->
                 <StackLayout
@@ -106,6 +106,7 @@
                         </inputLayout:SfTextInputLayout.LeadingView>
 
                         <maskededit:SfMaskedEdit
+                            TextColor="{DynamicResource PrimaryTextColor}"
                             Keyboard="Numeric"
                             ClearButtonVisibility="WhileEditing"
                             Mask="0 000000 000000"
@@ -143,6 +144,7 @@
                         </inputLayout:SfTextInputLayout.LeadingView>
 
                         <Entry
+                            TextColor="{DynamicResource PrimaryTextColor}"
                             Keyboard="Default"
                             Text="{Binding SerialNumber, Mode=TwoWay}"
                         />
@@ -177,6 +179,7 @@
                         </inputLayout:SfTextInputLayout.LeadingView>
 
                         <DatePicker MinimumDate="01/01/2019"
+                                    TextColor="{DynamicResource PrimaryTextColor}"
                             MaximumDate="12/31/2030" 
                             Date="{Binding Bought, Mode=TwoWay}"/>
                     </inputLayout:SfTextInputLayout>
@@ -200,6 +203,7 @@
 
                         <numericupdown:SfNumericUpDown 
                             x:Name="numericUpDown" 
+                            TextColor="{DynamicResource PrimaryTextColor}"
                             Minimum="0"
                             FormatString="n"
                             MaximumDecimalDigits ="0"
