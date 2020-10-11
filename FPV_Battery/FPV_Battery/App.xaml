@@ -5,7 +5,7 @@
 	<Application.Resources>
 
 		<!-- Application resource dictionary -->
-        <ResourceDictionary Source="Styles/LightTheme.xaml"/>
+        <ResourceDictionary Source="Styles/DarkTheme.xaml"/>
             
 	</Application.Resources>
 </Application>

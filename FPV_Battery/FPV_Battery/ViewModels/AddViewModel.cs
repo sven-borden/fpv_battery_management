@@ -94,12 +94,14 @@ namespace FPV_Battery.ViewModels
         private async void ScanModelClicked(object obj)
         {
             ZXing.Result result = await ScanCode(true);
-            Model = result.Text;
+            if (result != null)
+                Model = result.Text;
         }
         private async void ScanSerialClicked(object obj)
         {
             ZXing.Result result = await ScanCode(false);
-            SerialNumber = result.Text;
+            if(result != null)
+                SerialNumber = result.Text;
         }
         private async void CancelClicked(object obj)
         {

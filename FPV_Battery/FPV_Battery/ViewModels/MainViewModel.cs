@@ -72,6 +72,8 @@ namespace FPV_Battery.ViewModels
         private async void ScanAddCycle(object obj)
         {
             ZXing.Result result = await ScanHelper.ScanCode(false);
+            if (result == null)
+                return;
             try
             {
                 var SerialNumber = result.Text;

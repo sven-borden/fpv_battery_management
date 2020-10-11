@@ -17,27 +17,34 @@ namespace FPV_Battery.Services
 #endif
             var scanner = new ZXing.Mobile.MobileBarcodeScanner();
 
-            if (linear == true)
+            try
             {
-                var options = new ZXing.Mobile.MobileBarcodeScanningOptions();
-                options.PossibleFormats = new List<ZXing.BarcodeFormat>() {
+                if (linear == true)
+                {
+                    var options = new ZXing.Mobile.MobileBarcodeScanningOptions();
+                    options.PossibleFormats = new List<ZXing.BarcodeFormat>() {
                         ZXing.BarcodeFormat.All_1D
                 };
 
-                var result = await scanner.Scan(options);
+                    var result = await scanner.Scan(options);
 
-                return result;
+                    return result;
+                }
+                else
+                {
+                    //var options = new ZXing.Mobile.MobileBarcodeScanningOptions();
+                    //options.PossibleFormats = new List<ZXing.BarcodeFormat>() {
+                    //        ZXing.BarcodeFormat.QR_CODE, ZXing.BarcodeFormat.AZTEC
+                    //};
+
+                    var result = await scanner.Scan();
+
+                    return result;
+                }
             }
-            else
+            catch(Exception e)
             {
-                var options = new ZXing.Mobile.MobileBarcodeScanningOptions();
-                options.PossibleFormats = new List<ZXing.BarcodeFormat>() {
-                        ZXing.BarcodeFormat.QR_CODE, ZXing.BarcodeFormat.AZTEC
-                };
-
-                var result = await scanner.Scan(options);
-
-                return result;
+                return null;
             }
         }
     }
