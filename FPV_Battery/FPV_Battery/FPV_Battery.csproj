@@ -11,17 +11,17 @@
 
 <ItemGroup>
 <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-<PackageReference Include="Syncfusion.Licensing" Version="18.3.0.38" />
-<PackageReference Include="Syncfusion.Xamarin.Buttons" Version="18.3.0.38" />
-<PackageReference Include="Syncfusion.Xamarin.Core" Version="18.3.0.38" />
-<PackageReference Include="Syncfusion.Xamarin.DataSource" Version="18.3.0.38" />
-<PackageReference Include="Syncfusion.Xamarin.SfDataGrid" Version="18.3.0.38" />
-<PackageReference Include="Syncfusion.Xamarin.SfListView" Version="18.3.0.38" />
-<PackageReference Include="Syncfusion.Xamarin.SfMaskedEdit" Version="18.3.0.38" />
-<PackageReference Include="Syncfusion.Xamarin.SfNumericUpDown" Version="18.3.0.38" />
-<PackageReference Include="Syncfusion.Xamarin.SfRichTextEditor" Version="18.3.0.38" />
-<PackageReference Include="Xamarin.Forms" Version="4.8.0.1534" />
-<PackageReference Include="Xamarin.Forms.PancakeView" Version="2.2.0.740" />
+<PackageReference Include="Syncfusion.Licensing" Version="18.4.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.Buttons" Version="18.4.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.Core" Version="18.4.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.DataSource" Version="18.4.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfDataGrid" Version="18.4.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfListView" Version="18.4.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfMaskedEdit" Version="18.4.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfNumericUpDown" Version="18.4.0.47" />
+<PackageReference Include="Syncfusion.Xamarin.SfRichTextEditor" Version="18.4.0.47" />
+<PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
+<PackageReference Include="Xamarin.Forms.PancakeView" Version="2.3.0.759" />
 <PackageReference Include="ZXing.Net.Mobile.Forms" Version="3.0.0-beta5" />
 
 
